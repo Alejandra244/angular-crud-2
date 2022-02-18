@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "RosmatikaRegular-BWA45";
+    src: local("RosmatikaRegular-BWA45"), url(../../../assets/fonts/RosmatikaRegular-BWA45.ttf) format("truetype");
+}
+
+#title{
+    font-family: "RosmatikaRegular-BWA45";
+    font-size: xx-large;
+    color:#1a1818;
+}
+.navbar-nav {
+    margin-left: auto;
+}
+
+.nav-item{
+    font-size: x-large;
+    margin-right: 25px;
+    font-weight: 700;
+}
