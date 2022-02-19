@@ -19,31 +19,11 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>
-                        <img src="../../../assets/images/edit.png" height="24" width="24" id="edit">
-                        <img src="../../../assets/images/delete.png" height="24" width="24" >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>
-                        <img src="../../../assets/images/edit.png" height="24" width="24"id="edit">
-                        <img src="../../../assets/images/delete.png" height="24" width="24">
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Larry the Bird</td>
-                    <td>@twitter</td>
-                    <td>hfhffj</td>
+                  <tr class="text" *ngFor="let cliente of clientes | async">
+                    <td>{{cliente.id}}</td>
+                    <td>{{cliente.nombre}}</td>
+                    <td>{{cliente.direccion}}</td>
+                    <td>{{cliente.telefono}}</td>
                     <td>
                         <img src="../../../assets/images/edit.png" height="24" width="24"id="edit">
                         <img src="../../../assets/images/delete.png" height="24" width="24">
@@ -51,6 +31,7 @@
                   </tr>
                 </tbody>
               </table>
+          
         </div>
     </div>
 

@@ -4,16 +4,18 @@
             <div class="card bg-light text-center" style="--bs-bg-opacity: .6;">
                <div class="card-body">
                 <h3>Registrar Cliente</h3>
-                <form class="mt-4">
+                <span *ngIf="guardado && crearCliente.invalid" class="badge bg-danger"> Todos los campos son obligatorios</span>
+                <form class="mt-4" [formGroup]="crearCliente" (ngSubmit)="agregarCliente()">
                     <div class="col">
                         <div class="row mt-2">
-                            <input type="text" class="form-control form-control-lg" placeholder="María Perez">
+                            <input type="text" class="form-control form-control-lg" placeholder="María Perez" formControlName="nombre">
                         </div>
                         <div class="row mt-2">
-                            <input type="text" class="form-control form-control-lg" placeholder="Pantoja, calle 5 #24">
+                            <input type="text" class="form-control form-control-lg" placeholder="Pantoja, calle 5 #24" formControlName="direccion">
                         </div>
                         <div class="row mt-2">
-                            <input type="text" class="form-control form-control-lg" placeholder="809-999-9999">
+                            <input type="text" class="form-control form-control-lg" placeholder="8091234567" formControlName="telefono">
+                            
                         </div>
                     </div>
                     <div class="mt-3">
