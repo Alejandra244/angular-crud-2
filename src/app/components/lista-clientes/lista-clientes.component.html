@@ -1,14 +1,14 @@
 <div class="container mt-4">
-    <div class="card bg-light " style="--bs-bg-opacity: .6;">
-        <div class="card-body" >
+  <div class="card bg-light " style="--bs-bg-opacity: .6;">
+    <div class="card-body" >
             
-                    <span class="h3">Clientes Registrados</span>
-                    <button class="btn btn-outline-secondary btn-lg float-end" routerLink="/crear-cliente">Registrar Cliente</button>
+      <span class="h3">Clientes Registrados</span>
+      <button class="btn btn-outline-secondary btn-lg float-end" routerLink="/crear-cliente">Registrar Cliente</button>
                
             
             
-
-            <table class="table table-hover mt-4">
+              
+            <table *ngIf="clientes.length > 0" class="table table-hover mt-4">
                 <thead>
                   <tr>
                       <th>ID</th>
@@ -19,20 +19,20 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="text" *ngFor="let cliente of clientes | async">
+                  <tr class="text" *ngFor="let cliente of clientes">
                     <td>{{cliente.id}}</td>
                     <td>{{cliente.nombre}}</td>
                     <td>{{cliente.direccion}}</td>
-                    <td>{{cliente.telefono}}</td>
+                    <td>{{cliente.telefono | slice:0:3}}-{{cliente.telefono | slice:3:6}}-{{cliente.telefono | slice:6:10}} </td>
                     <td>
                         <img src="../../../assets/images/edit.png" height="24" width="24"id="edit">
-                        <img src="../../../assets/images/delete.png" height="24" width="24">
+                        <img (click)="eliminarClientes(cliente.id)" src="../../../assets/images/delete.png" height="24" width="24">
                     </td>
                   </tr>
                 </tbody>
               </table>
-          
-        </div>
+              
     </div>
-
+    <span *ngIf="clientes.length == 0" class="h6" style="margin-left:30px;">No hay Clientes Registrados</span>
+  </div>
 </div>

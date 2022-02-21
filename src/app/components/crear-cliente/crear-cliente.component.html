@@ -3,18 +3,20 @@
         <div class="col col-lg-6 offset-lg-3">
             <div class="card bg-light text-center" style="--bs-bg-opacity: .6;">
                <div class="card-body">
-                <h3>Registrar Cliente</h3>
+                <h3>Registrar Cliente <div *ngIf="loading" class="spinner-border text-danger float-end" role="status">
+                    <span class="visually-hidden">Cargando...</span>
+                  </div></h3>
                 <span *ngIf="guardado && crearCliente.invalid" class="badge bg-danger"> Todos los campos son obligatorios</span>
                 <form class="mt-4" [formGroup]="crearCliente" (ngSubmit)="agregarCliente()">
                     <div class="col">
                         <div class="row mt-2">
-                            <input type="text" class="form-control form-control-lg" placeholder="María Perez" formControlName="nombre">
+                            <input type="text" class="form-control form-control-lg" placeholder="Nombre" formControlName="nombre">
                         </div>
                         <div class="row mt-2">
-                            <input type="text" class="form-control form-control-lg" placeholder="Pantoja, calle 5 #24" formControlName="direccion">
+                            <input type="text" class="form-control form-control-lg" placeholder="Dirección" formControlName="direccion">
                         </div>
                         <div class="row mt-2">
-                            <input type="text" class="form-control form-control-lg" placeholder="8091234567" formControlName="telefono">
+                            <input type="text" class="form-control form-control-lg" placeholder="Teléfono / ejemplo: 8091234567" formControlName="telefono">
                             
                         </div>
                     </div>
