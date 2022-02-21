@@ -25,8 +25,8 @@
                     <td>{{cliente.direccion}}</td>
                     <td>{{cliente.telefono | slice:0:3}}-{{cliente.telefono | slice:3:6}}-{{cliente.telefono | slice:6:10}} </td>
                     <td>
-                        <img src="../../../assets/images/edit.png" height="24" width="24"id="edit">
-                        <img (click)="eliminarClientes(cliente.id)" src="../../../assets/images/delete.png" height="24" width="24">
+                        <img [routerLink]="['/editar-cliente/',cliente.id ]" src="../../../assets/images/edit.png" height="24" width="24"id="edit" style="cursor:pointer">
+                        <img (click)="eliminarClientes(cliente.id)" src="../../../assets/images/delete.png" height="24" width="24" style="cursor:pointer">
                     </td>
                   </tr>
                 </tbody>

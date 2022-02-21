@@ -20,4 +20,10 @@ export class ClienteService {
    eliminarCliente(id:string): Promise<any> {
       return this.firestore.collection("clientes").doc(id).delete();
    }
+   getCliente(id:string): Observable<any>{
+     return this.firestore.collection("clientes").doc(id).snapshotChanges();
+   }
+   actualizarCliente(id:string, data:any):Promise<any>{
+     return this.firestore.collection("clientes").doc(id).update(data);
+   }
 }
